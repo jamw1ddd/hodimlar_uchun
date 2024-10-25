@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Page</title>
+</head>
+<body>
+    <h1>Timer is Running...</h1>
+    <p id="timerDisplay"></p>
+
+    <script>
+        // Set the countdown time (e.g., 10 seconds)
+        let countdownTime = 10;
+
+        function updateTimer() {
+            if (countdownTime > 0) {
+                document.getElementById("timerDisplay").innerText = `Time remaining: ${countdownTime} seconds`;
+                countdownTime--;
+            } else {
+                // Redirect after the timer ends
+                window.location.href = "{% url 'home' %}";
+            }
+        }
+
+        // Start countdown
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
