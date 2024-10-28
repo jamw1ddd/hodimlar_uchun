@@ -140,4 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = "/sign-in/"
 LOGIN_REDIRECT_URL = "/home/"
 
-AUTH_USER_MODEL = 'main.CustomUser'  
+AUTH_USER_MODEL = 'main.CustomUser'
+AUTHENTICATION_BACKENDS = ['main.backends.PhoneNumberOrUsernameModelBackend']
+
